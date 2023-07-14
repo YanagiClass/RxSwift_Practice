@@ -17,6 +17,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		685DB2F92A618A3B00F94CB4 /* Traits.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Traits.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		685DB2FA2A61971B00F94CB4 /* Subjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subjects.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		685DB2FB2A619CFC00F94CB4 /* FilteringOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FilteringOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		685DB2FC2A61A2C700F94CB4 /* TransformingOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TransformingOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		68743DB72A594D1300085467 /* Observable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		68959FA42A5944B40055B0DC /* RxPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68959FA72A5944B40055B0DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,10 @@
 				68959FB22A5944B40055B0DC /* LaunchScreen.storyboard */,
 				68959FB52A5944B40055B0DC /* Info.plist */,
 				68743DB72A594D1300085467 /* Observable.playground */,
+				685DB2F92A618A3B00F94CB4 /* Traits.playground */,
+				685DB2FA2A61971B00F94CB4 /* Subjects.playground */,
+				685DB2FB2A619CFC00F94CB4 /* FilteringOperators.playground */,
+				685DB2FC2A61A2C700F94CB4 /* TransformingOperators.playground */,
 			);
 			path = RxPractice;
 			sourceTree = "<group>";
