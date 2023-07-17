@@ -27,6 +27,7 @@ print("------flatMap------")
 
 //Observable<Observable<String>>
 //[[String]]
+//중첩된 Observable을 처리하는데 유용하다.
 protocol 선수 {
     var 점수 : BehaviorSubject<Int>{ get }
     
@@ -106,7 +107,16 @@ let 달리기100M = BehaviorSubject<선수>(value: 김토끼)
 달리기100M
     .flatMapLatest { 선수 in
         선수.점수
+            .materialize() //이벤트를 감싸서 출력해줌
     }
+    .filter{
+        guard let error = $0.error else{
+            return true
+        }
+        print(error)
+        return false
+    }
+    .dematerialize() //다시 원래대로 출력해줌
     .subscribe(onNext: {
         print($0)
     })
@@ -118,3 +128,48 @@ let 달리기100M = BehaviorSubject<선수>(value: 김토끼)
 
 달리기100M.onNext(박치타)
 
+print("------전화번호 11자리------")
+let input = PublishSubject<Int?>()
+
+let list : [Int] = [1]
+
+input
+    .flatMap {
+        $0 == nil
+        ? Observable.empty()
+        :Observable.just($0)
+    }
+    .map{ $0! }
+    .skip(while: { $0 != 0 })
+    .take(11)
+    .toArray()
+    .asObservable()
+    .map{
+        $0.map{"\($0)"}
+    }
+    .map { numbers in
+        var numberList = numbers
+        numberList.insert("-", at: 3)
+        numberList.insert("-", at: 8)
+        let number = numberList.reduce(" ", +)
+        return number
+    }
+    .subscribe(onNext: {
+        print($0)
+    })
+    .disposed(by: disposeBag)
+
+input.onNext(10)
+input.onNext(0)
+input.onNext(nil)
+input.onNext(1)
+input.onNext(0)
+input.onNext(1)
+input.onNext(2)
+input.onNext(nil)
+input.onNext(3)
+input.onNext(4)
+input.onNext(5)
+input.onNext(6)
+input.onNext(7)
+input.onNext(8)

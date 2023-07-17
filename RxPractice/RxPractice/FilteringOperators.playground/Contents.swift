@@ -88,7 +88,7 @@ Observable.of("1", "2", "3", "4", "5", "6","7")
     })
     .disposed(by: disposeBag)
 
-print("------takeWHile------")
+print("------takeWhile------")
 
 Observable.of("1", "2", "3", "4", "5", "6","7")
     .take(while: {
